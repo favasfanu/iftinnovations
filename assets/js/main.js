@@ -49,6 +49,57 @@
   });
 
   /**
+   * for tab behavior 
+   */
+document.querySelectorAll('.services-list a').forEach(item => {
+    item.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      // Update active link
+      document.querySelectorAll('.services-list a').forEach(link => link.classList.remove('active'));
+      this.classList.add('active');
+
+      // Hide all services
+      document.querySelectorAll('.service-detail').forEach(box => box.classList.remove('active'));
+
+      // Show selected
+      const targetId = this.getAttribute('data-target');
+      document.getElementById(targetId).classList.add('active');
+    });
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  /**
    * Toggle mobile nav dropdowns
    */
   document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
